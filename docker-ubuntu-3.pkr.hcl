@@ -2,7 +2,7 @@ packer {
   required_plugins {
     docker = {
       version = ">= 1.0.8"
-      source = "github.com/hashicorp/docker"
+      source  = "github.com/hashicorp/docker"
     }
   }
 }
@@ -13,8 +13,15 @@ source "docker" "ubuntu" {
 }
 
 build {
-  name    = "learn-packer"
+  name = "learn-packer"
   sources = [
     "source.docker.ubuntu"
   ]
+
+  provisioner "shell" {
+    environment_vars = [
+      "FOO=hello world",
+    ]
+    script = "provision.sh"
+  }
 }
