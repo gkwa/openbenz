@@ -17,7 +17,6 @@ source "docker" "fedora" {
   commit = true
 }
 
-
 build {
   name = "learn-packer"
   sources = [
