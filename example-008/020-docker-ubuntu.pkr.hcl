@@ -13,7 +13,7 @@ packer {
 }
 
 source "docker" "ubuntu" {
-  image  = "ubuntu:jammy"
+  image  = "docker.io/taylorm/mytest"
   commit = true
 }
 

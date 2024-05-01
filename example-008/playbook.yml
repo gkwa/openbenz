@@ -1,8 +1,8 @@
-- name: 'Provision Image'
+- name: Provision Image
   hosts: default
 
   tasks:
-    - name: install Apache
+    - name: install nginx
       package:
-        name: 'httpd'
+        name: nginx
         state: present
