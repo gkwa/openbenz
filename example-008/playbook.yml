@@ -2,7 +2,7 @@
   hosts: default
   tasks:
     - name: install nginx
-      apt:
+      package:
         name: nginx
         state: present
         update_cache: yes
