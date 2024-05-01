@@ -19,7 +19,13 @@ build {
   ]
 
   provisioner "shell" {
-    script = "provision.sh"
+    inline = [
+      "apt-get update",
+      "apt-get -y install python3 python3-pip",
+      "apt-get -y install bash", // Install bash explicitly
+      "apt-get clean",
+      "rm -rf /var/lib/apt/lists/*"
+    ]
   }
 
   post-processors {

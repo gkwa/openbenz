@@ -1,8 +1,8 @@
 - name: Provision Image
   hosts: default
-
   tasks:
     - name: install nginx
-      package:
+      apt:
         name: nginx
         state: present
+        update_cache: yes

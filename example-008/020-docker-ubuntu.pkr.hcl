@@ -4,7 +4,6 @@ packer {
       version = ">= 1.0.8"
       source  = "github.com/hashicorp/docker"
     }
-
     ansible = {
       version = "~> 1"
       source  = "github.com/hashicorp/ansible"
@@ -25,5 +24,8 @@ build {
 
   provisioner "ansible" {
     playbook_file = "./playbook.yml"
+    extra_arguments = [
+      "-e", "ansible_python_interpreter=/usr/bin/python3"
+    ]
   }
 }
