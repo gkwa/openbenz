@@ -35,6 +35,10 @@ build {
     "source.docker.ubuntu"
   ]
 
+  provisioner "shell" {
+    script = "provision.sh"
+  }
+
   post-processors {
     post-processor "docker-import" {
       repository = "docker.io/taylorm/mytest4"
